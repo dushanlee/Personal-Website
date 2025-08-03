@@ -1,0 +1,318 @@
+/*put your css here*/
+
+#page-header {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: center;
+    /* makes sure text is aligned to the left */
+
+}
+
+#about {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+#skills {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+#resume {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+#projects {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+#gallery {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+#contact {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+#interests {
+    max-width: 600px;
+    /* controls how wide the text can stretch */
+    margin: 0 auto;
+    /* centers the content horizontally */
+    text-align: left;
+    /* makes sure text is aligned to the left */
+
+}
+
+/* =======================
+   GLOBAL STYLES
+======================= */
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif; /* Body text */
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c); /* sleek dark gradient */
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Modern section cards */
+section {
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.05); /* semi-transparent glassy card */
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(8px); /* glassmorphism effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* deep modern shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px); /* subtle lift effect */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* =======================
+   TYPOGRAPHY
+======================= */
+
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', 'Cinzel', serif; /* Elegant modern headings */
+    color: #00BFFF; /* modern cyan-blue accent */
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.3); /* subtle glowing effect */
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+p, li {
+    font-size: 1.05rem;
+    color: #eaeaea; /* softer white */
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+/* =======================
+   NAVIGATION BAR
+======================= */
+
+nav {
+    background-color: rgba(15, 15, 15, 0.95);
+    text-align: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+nav a {
+    color: #00BFFF;
+    text-decoration: none;
+    margin: 0 1.2rem;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
+
+/* =======================
+   GALLERY & IMAGES
+======================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.4);
+}
+
+/* =======================
+   FORMS
+======================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+input, textarea, button {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+input, textarea {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #bbb;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.4);
+}
+
+button {
+    background-color: #00BFFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+button:hover {
+    background-color: #009ACD;
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+}
+
+/* =======================
+   BADMINTON SCOREBOARD
+======================= */
+
+#badminton-fun {
+    text-align: center;
+}
+
+.scoreboard {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #00BFFF;
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+}
+
+#winner {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #90EE90;
+}
+
+/* =======================
+   CANVAS GAME
+======================= */
+
+#mini-game canvas {
+    display: block;
+    margin: 1rem auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00BFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+/* =======================
+   RESPONSIVE DESIGN
+======================= */
+
+@media (max-width: 768px) {
+    section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Resume link styling */
+#resume a {
+    color: #00BFFF; /* modern cyan to match theme */
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#resume a:hover {
+    color: #ffffff; /* white on hover for contrast */
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
