@@ -1,140 +1,586 @@
-<!DOCTYPE html> <!-- Declare HTML5 -->
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+  <meta charset="UTF-8">
+    <title>Dushan Lee – Full-Stack Software Engineer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfolio of Dushan (Michael) Lee – Full-Stack Software Engineer delivering scalable, maintainable web applications with React, FastAPI, and PostgreSQL.">
+  <meta name="author" content="Dushan Lee">
+  <meta name="keywords" content="Dushan Lee, Software Engineer, Full Stack, React, FastAPI, PostgreSQL, Portfolio">
+  <meta name="robots" content="index,follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://your-domain.example">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <!-- Open Graph -->
+  <meta property="og:title" content="Dushan Lee – Full-Stack Software Engineer">
+  <meta property="og:description" content="Full-stack engineer specializing in React, FastAPI, PostgreSQL, and scalable product development.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.example">
+  <meta property="og:image" content="https://your-domain.example/og-image.jpg">
+  <meta property="og:site_name" content="Dushan Lee Portfolio">
+  <meta name="twitter:site" content="@your_handle">
+  <meta name="twitter:creator" content="@your_handle">
+  <meta name="twitter:card" content="summary_large_image">
+    <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload main font weights (optional subset strategy) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap">
+    <!-- Favicon / Icons (replace with real assets) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dushan Lee",
+        "givenName": "Dushan",
+        "familyName": "Lee",
+        "jobTitle": "Full-Stack Software Engineer",
+        "email": "mailto:dushan830@gmail.com",
+        "telephone": "+1-626-720-3151",
+        "url": "https://your-domain.example",
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of California, San Diego"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "Hack Reactor"
+          }
+        ],
+        "knowsAbout": [
+          "React", "FastAPI", "PostgreSQL", "TypeScript", "Docker", "Software Architecture", "Data Modeling", "Agile", "Testing"
+        ],
+        "sameAs": [
+          "https://github.com/dushanlee",
+          "https://www.linkedin.com/in/dushanlee"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript><div class="noscript-banner">JavaScript is disabled. Some animated metrics and theme features are unavailable.</div></noscript>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-<head>
-    <meta charset="UTF-8"> <!-- Character encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive on all devices -->
-    <title>Dushan (Michael) Lee - Personal Website</title> <!-- Title on browser tab -->
-
-    <!-- Google Fonts for Roman Theme -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-    <!-- Navigation bar -->
-    <nav>
-        <a href="#page-header">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <a href="#interests">Interests</a>
-    </nav>
-
-    <!-- Main header -->
-    <header id="page-header">
-        <h1>Welcome to My Website</h1>
-        <p>This is my personal space where I share my journey, skills, and passion for coding.</p>
+  <header class="site-header" id="top" aria-label="Site header">
+      <div class="nav-inner">
+        <div class="brand">
+          <span class="logo-initials" aria-hidden="true">DL</span>
+          <span class="brand-name">Dushan Lee</span>
+        </div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#now">Now</a></li>
+            <li><a href="#contact" class="cta-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-controls">
+          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+            <span class="theme-icon sun" aria-hidden="true">☀️</span>
+            <span class="theme-icon moon" aria-hidden="true">🌙</span>
+          </button>
+          <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hi! My name is Dushan (Michael) Lee. My journey into tech began in an unexpected place: medicine. I was
-            originally on the pre-med path, but I found myself drawn to the problem-solving, systems-thinking, and
-            creative process that software development offers. That shift led me to complete Hack Reactor’s 16-week
-            full-stack software engineering bootcamp, where I gained hands-on experience with JavaScript, Python, React,
-            and building full-stack web applications.
-        </p>
-        <p>
-            I’m passionate about building clean, intuitive tools that make life easier and more efficient. I thrive in
-            collaborative environments, value thoughtful, maintainable code, and enjoy learning through doing. I'm
-            excited to keep learning, building, and growing alongside others who care about real collaboration and
-            continuous improvement. Outside of tech, I’m into gaming, badminton, cooking, music, and exploring how
-            people think and grow, and most importantly, thinking about the Roman Empire.
-        </p>
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section id="skills">
-        <h2>Skills</h2>
-
-        <h3>Front-End</h3>
-        <ul>
-            <li>HTML5, CSS3</li>
-            <li>JavaScript, React</li>
-            <li>AJAX, DOM Manipulation</li>
+  <header class="hero" aria-labelledby="heroTitle">
+      <div class="hero-inner">
+  <h1 id="heroTitle" class="hero-title"><span class="visually-hidden">Portfolio – </span>Dushan Lee – Full‑Stack Software Engineer</h1>
+        <p class="hero-sub">Building reliable, maintainable, user‑centric applications with React, FastAPI, and PostgreSQL.</p>
+        <ul class="hero-highlights">
+          <li>Architecture Ownership &amp; Scalable Data Modeling</li>
+          <li>Agile Delivery &amp; Code Review Culture</li>
+          <li>Testable, Component‑Driven Frontends</li>
         </ul>
-
-        <h3>Back-End</h3>
-        <ul>
-            <li>Python</li>
-            <li>Node.js</li>
-            <li>Java</li>
-        </ul>
-
-        <h3>Full-Stack & Tools</h3>
-        <ul>
-            <li>RESTful APIs, MVC Architecture</li>
-            <li>MongoDB, PostgreSQL</li>
-            <li>Git, GitHub, GitLab CI/CD</li>
-            <li>Deployment: Heroku, DigitalOcean</li>
-            <li>Version control, Agile workflows</li>
-            <li>GitHub Copilot, VS Code, Chrome DevTools</li>
-        </ul>
-
-        <h3>Certifications</h3>
-        <ul>
-            <li>Hack Reactor Software Engineering Bootcamp</li>
-        </ul>
-    </section>
-
-    <!-- RESUME SECTION -->
-    <section id="resume">
-        <h2>Resume</h2>
-        <a href="resume.pdf" target="_blank" class="resume-btn">View My Resume (PDF)</a>
-    </section>
-
-    <!-- PROJECTS SECTION (Blank for Now) -->
-    <section id="projects">
-        <h2>Projects & Portfolio</h2>
-        <p>Coming soon! I’m working on building exciting projects to showcase here.</p>
-    </section>
-
-    <!-- GALLERY SECTION (Blank for Now) -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <p>Gallery will be added in the future.</p>
-        <div class="gallery-grid">
-            <!-- Future images go here -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="resume.pdf" class="btn ghost" target="_blank" rel="noopener">Resume PDF</a>
+          <a href="#contact" class="btn ghost" rel="noopener">Contact</a>
         </div>
-    </section>
+      </div>
+      <div class="hero-accent" aria-hidden="true"></div>
+  </header>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="mailto:dushan830@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <main id="main">
+      <section id="impact" class="section alt">
+        <div class="section-head">
+          <h2 class="section-title">Impact Snapshot</h2>
+          <p class="section-tagline">Throughput, clarity, sustainable velocity.</p>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value" data-count="800" data-plus="true">0</div>
+            <div class="metric-label">Hours Intensive Training</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value" data-count="5" data-plus="true">0</div>
+            <div class="metric-label">Full-Stack Projects</div>
+          </div>
+            <div class="metric-card">
+              <div class="metric-value" data-count="15" data-plus="false">0</div>
+              <div class="metric-label">Reusable Components</div>
+            </div>
+          <div class="metric-card">
+            <div class="metric-value" data-count="100" data-plus="true">0</div>
+            <div class="metric-label">Reviewed Commits</div>
+          </div>
+        </div>
+        <div class="achievement-badges">
+          <span>Architecture Owner</span><span>Data Modeling</span><span>Async APIs</span><span>TDD Mindset</span><span>CI/CD Pipelines</span><span>Performance Focus</span><span>Pairing &amp; Review</span>
+        </div>
+      </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+      <section id="projects" class="section">
+        <div class="section-head">
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-tagline">Product clarity, clean architecture, measurable technical value.</p>
+        </div>
+        <div class="projects-filters" role="tablist" aria-label="Filter projects">
+          <button type="button" class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="in-progress">In Progress</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-tags="fullstack capstone architecture data performance">
+            <div class="project-meta">
+              <h3>Flavorgram (Capstone)</h3>
+              <p class="project-role">Lead Engineer (Architecture) • 2025</p>
+            </div>
+            <p class="project-desc">Recipe sharing platform blending social feed, visual inspiration, structured reviews. Led repo design, environment setup, and architectural conventions enabling parallel feature velocity.</p>
+            <ul class="project-points">
+              <li>Normalized PostgreSQL schema for recipes, ingredients, costing, interactions.</li>
+              <li>FastAPI services with dependency injection, validation, pagination.</li>
+              <li>Reusable TypeScript component system (cards, feed, ratings, threads).</li>
+              <li>Containerized stack (Docker) &amp; CI with automated test pipeline.</li>
+              <li>Documented standards &amp; enforced review discipline.</li>
+            </ul>
+            <div class="stack-tags"><span>FastAPI</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span><span>CI/CD</span></div>
+          </article>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
+          <article class="project-card" data-tags="fullstack in-progress analytics performance architecture">
+            <div class="project-meta">
+              <h3>Badminton Ranking System</h3>
+              <p class="project-role">In Progress • 2025</p>
+            </div>
+            <p class="project-desc">ELO-based ladder with player stats, match history, responsive analytics dashboard.</p>
+            <ul class="project-points">
+              <li>Deterministic ranking pipeline &amp; historical recomputation.</li>
+              <li>Versioned REST API with schema validation &amp; service boundaries.</li>
+              <li>Performance-aware UI render strategy.</li>
+            </ul>
+            <div class="stack-tags"><span>React</span><span>FastAPI</span><span>PostgreSQL</span></div>
+          </article>
 
-            <button type="submit">Send</button>
-        </form>
-    </section>
+          <article class="project-card" data-tags="fullstack productivity solo data architecture">
+            <div class="project-meta">
+              <h3>Notes &amp; Tasks App</h3>
+              <p class="project-role">Solo • 2025</p>
+            </div>
+            <p class="project-desc">Searchable productivity workspace with tagging, task tracking, and structured CRUD flows.</p>
+            <ul class="project-points">
+              <li>Layered architecture (routes → services → repository).</li>
+              <li>Indexed queries &amp; selective column projection.</li>
+              <li>Predictable state via controlled inputs &amp; lifted state.</li>
+            </ul>
+            <div class="stack-tags"><span>React</span><span>FastAPI</span><span>SQL</span></div>
+          </article>
 
-    <!-- INTERESTS SECTION -->
-    <section id="interests">
-        <h2>Interests & Hobbies</h2>
-        <ul>
-            <li><strong>Gaming:</strong> My gaming interests are all about creativity and exploration, from customizing games with mods to getting lost in vast open worlds.</li>
-            <li><strong>Fitness:</strong> My fitness routine blends strength training at the gym with the fast-paced energy of badminton, keeping both my mind sharp and my body active.</li>
-            <li><strong>Music:</strong> My taste in music is diverse, ranging from EDM, rap, pop, and K‑pop to worship music, and I enjoy expressing that passion by playing four different instruments.</li>
-            <li><strong>Psychology & Personal Growth:</strong> My curiosity for the human mind drives me to explore how people think, learn, adapt, and grow over time.</li>
-            <li><strong>Cooking:</strong> My love for cooking comes from experimenting with new recipes and sharing creative meals with friends and family.</li>
-        </ul>
-    </section>
+          <article class="project-card" data-tags="fullstack finance in-progress data architecture">
+            <div class="project-meta">
+              <h3>Finance / Budget Tracker</h3>
+              <p class="project-role">In Progress • 2025</p>
+            </div>
+            <p class="project-desc">Expense categorization, savings targets, trend visualization &amp; secure API layer.</p>
+            <ul class="project-points">
+              <li>Extensible schema for future forecasting &amp; aggregation.</li>
+              <li>Iterative roadmap guided by usage scenarios.</li>
+            </ul>
+            <div class="stack-tags"><span>React</span><span>FastAPI</span><span>PostgreSQL</span></div>
+          </article>
+        </div>
+      </section>
 
-</body>
+      <section id="skills" class="section alt">
+        <div class="section-head">
+          <h2 class="section-title">Technical Skill Set</h2>
+          <p class="section-tagline">Depth in back-end systems + reliable front-end delivery.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-block">
+            <h3>Languages &amp; Data</h3>
+            <ul><li>Python</li><li>JavaScript / TypeScript</li><li>SQL / PostgreSQL</li><li>Relational Modeling</li><li>HTML5 / CSS3</li></ul>
+          </div>
+          <div class="skill-block">
+            <h3>Frameworks &amp; Tools</h3>
+            <ul><li>React (Hooks &amp; Patterns)</li><li>FastAPI (Async)</li><li>Tailwind CSS</li><li>Docker</li><li>REST &amp; JSON</li><li>Render Deployment</li></ul>
+          </div>
+          <div class="skill-block">
+            <h3>Engineering Practices</h3>
+            <ul><li>Agile Iteration</li><li>Pair Programming</li><li>Code Reviews</li><li>TDD &amp; Unit Tests</li><li>System Debugging</li></ul>
+          </div>
+          <div class="skill-block">
+            <h3>Testing &amp; Quality</h3>
+            <ul><li>Vitest</li><li>React Testing Library</li><li>Integration Tests</li><li>Static Analysis</li><li>Performance Profiling</li></ul>
+          </div>
+          <div class="skill-block">
+            <h3>Collaboration</h3>
+            <ul><li>Architecture Ownership</li><li>Branch Strategy</li><li>Documentation</li><li>Knowledge Sharing</li><li>Tooling Automation</li></ul>
+          </div>
+          <div class="skill-block">
+            <h3>Tooling</h3>
+            <ul><li>Git / GitHub / GitLab</li><li>Render.com</li><li>Chrome DevTools</li><li>GitHub Copilot</li><li>Shell Productivity</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-head">
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="time-range">Jun – Oct 2025</div>
+            <div class="timeline-content">
+              <h3>Software Engineering Fellow – Hack Reactor</h3>
+              <ul>
+                <li>800+ hours immersive full-stack (Python, JS/TS, React, FastAPI, SQL).</li>
+                <li>Shipped multi-service applications under sprint cadence.</li>
+                <li>Practiced full Agile loop: planning, standups, retros.</li>
+                <li>Embedded pairing &amp; review to raise code quality signal.</li>
+                <li>Implemented containerized dev &amp; CI pipelines.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section alt">
+        <div class="section-head">
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="education-grid">
+          <div class="edu-card">
+            <h3>Hack Reactor</h3>
+            <p class="edu-meta">Full-Stack Software Engineering • 2025</p>
+            <p>Production-focused, project-intensive training emphasizing maintainable architecture and iterative delivery.</p>
+          </div>
+          <div class="edu-card">
+            <h3>University of California, San Diego</h3>
+            <p class="edu-meta">B.S. Biochemistry • Minors: Psychology &amp; Political Science • GPA 3.65</p>
+            <p>Analytical rigor, structured problem solving, interdisciplinary reasoning.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-head">
+          <h2 class="section-title">Professional Profile</h2>
+        </div>
+        <div class="about-layout">
+          <div>
+            <p>I build systems that balance clarity, performance, and future extensibility—favoring explicit contracts, strong data modeling, and incremental iteration.</p>
+            <p>I thrive defining architecture, enforcing consistent patterns, and unblocking ambiguity. I prefer small, reviewable commits and meaningful code review dialogue over bulk merges.</p>
+            <p>Tooling, automation, and tests shorten feedback loops—letting engineering focus on user value instead of reactive debugging.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="now" class="section alt">
+        <div class="section-head">
+          <h2 class="section-title">Current Focus</h2>
+          <p class="section-tagline">Deliberate skill expansion &amp; applied experimentation (updated monthly).</p>
+        </div>
+        <div class="now-grid">
+          <div class="now-block">
+            <h3>Improving</h3>
+            <ul>
+              <li>Advanced query optimization &amp; indexing patterns</li>
+              <li>Component accessibility auditing</li>
+              <li>Systematic performance budgets (LCP / CLS)</li>
+            </ul>
+          </div>
+          <div class="now-block">
+            <h3>Exploring</h3>
+            <ul>
+              <li>Event-driven architecture basics</li>
+              <li>Background task orchestration (Celery / RQ)</li>
+              <li>End-to-end test hardening strategies</li>
+            </ul>
+          </div>
+          <div class="now-block">
+            <h3>Principles Practiced</h3>
+            <ul>
+              <li>Small vertical slices over broad scaffolds</li>
+              <li>Test-first on fragile logic paths</li>
+              <li>Review checklists for consistency</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section alt">
+        <div class="section-head">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-tagline">Single, focused contact hub to collaborate or explore opportunities.</p>
+        </div>
+        <div class="contact-hub">
+          <div class="contact-cards">
+            <a class="contact-card contact-card-link" href="mailto:dushan830@gmail.com">
+              <h3>Email</h3>
+              <span class="contact-link">dushan830@gmail.com</span>
+              <p class="contact-note">Best for introductions, role discussions, or collaboration ideas.</p>
+            </a>
+            <a class="contact-card contact-card-link" href="https://www.linkedin.com/in/dushanlee" target="_blank" rel="noopener">
+              <h3>LinkedIn</h3>
+              <span class="contact-link">/in/dushanlee</span>
+              <p class="contact-note">Connect professionally or send a short message.</p>
+            </a>
+            <a class="contact-card contact-card-link" href="https://github.com/dushanlee" target="_blank" rel="noopener">
+              <h3>GitHub</h3>
+              <span class="contact-link">@dushanlee</span>
+              <p class="contact-note">See active code, patterns, and recent problem solving.</p>
+            </a>
+            <a class="contact-card contact-card-link" href="tel:+16267203151">
+              <h3>Phone</h3>
+              <span class="contact-link">(626)&nbsp;720&#8209;3151</span>
+              <p class="contact-note">Brief&nbsp;voicemail&nbsp;okay&nbsp;for&nbsp;scheduling.</p>
+            </a>
+            <div class="contact-card contact-guide-card">
+              <h3>Fastest Response</h3>
+              <ul class="contact-tips">
+                <li>Role: stack &amp; team size</li>
+                <li>Project: scope &amp; timeline</li>
+                <li>Links: spec / repo / brief</li>
+              </ul>
+              <a class="btn ghost small" href="resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+            </div>
+          </div>
+          <div class="contact-card contact-form-wrapper">
+            <h3>Message</h3>
+            <form class="contact-form" action="mailto:dushan830@gmail.com" method="post" enctype="text/plain" novalidate>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="How can I help?"></textarea>
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+              </div>
+              <button type="submit" class="btn primary full">Send Message</button>
+              <p class="form-note">Prefer email? Use the address card.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="sr-live" aria-live="polite" aria-atomic="true"></div>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">↑</button>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Dushan Lee. All rights reserved.</p>
+    </footer>
+
+  <script>
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Theme init (system preference fallback)
+      const root = document.documentElement;
+      const storedTheme = localStorage.getItem('pref-theme');
+      if (storedTheme) {
+        root.setAttribute('data-theme', storedTheme);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+
+      // Theme toggle (adds aria-pressed + responds to prefers-color-scheme changes)
+      const themeToggle = document.getElementById('themeToggle');
+      const live = document.querySelector('.sr-live');
+      function applyTheme(next) {
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('pref-theme', next);
+        themeToggle.setAttribute('aria-pressed', next === 'dark');
+        live.textContent = `Theme set to ${next}`;
+      }
+      themeToggle.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+      // Respond to system preference change if user has not explicitly set
+      if (!storedTheme) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
+
+      // Mobile nav + outside click + Escape
+      const navToggle = document.getElementById('navToggle');
+      const nav = document.querySelector('.primary-nav');
+      function closeNav() {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+        document.body.classList.remove('nav-open');
+      }
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+        document.body.classList.toggle('nav-open');
+      });
+      document.addEventListener('click', (e) => {
+        if (nav.classList.contains('open') && !nav.contains(e.target) && e.target !== navToggle) {
+          closeNav();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) closeNav();
+      });
+      document.querySelectorAll('.primary-nav a').forEach(a => {
+        a.addEventListener('click', () => closeNav());
+      });
+
+      // Active nav link on scroll
+      const sections = [...document.querySelectorAll('main section[id]')];
+      const navLinks = document.querySelectorAll('.primary-nav a');
+      const setActive = () => {
+        let currentId = null;
+        const offset = window.scrollY + 150;
+        for (const sec of sections) {
+          if (sec.offsetTop <= offset) currentId = sec.id;
+        }
+        navLinks.forEach(l => {
+          l.removeAttribute('aria-current');
+          if (l.getAttribute('href') === '#' + currentId) l.setAttribute('aria-current','page');
+        });
+      };
+      window.addEventListener('scroll', setActive);
+      setActive();
+
+      // Metric counters (plus appended only at completion if data-plus true) – respects reduced motion
+      const counters = document.querySelectorAll('.metric-value[data-count]');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        const counterObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = +el.dataset.count;
+              const showPlus = el.dataset.plus === 'true';
+              const duration = Math.min(1400, 400 + target * 12);
+              const startTime = performance.now();
+              const step = (t) => {
+                const progress = Math.min((t - startTime) / duration, 1);
+                const eased = progress < 0.5 ? 2*progress*progress : -1 + (4 - 2*progress)*progress;
+                const value = Math.floor(eased * target);
+                el.textContent = progress < 1 ? value : target + (showPlus ? '+' : '');
+                if (progress < 1) requestAnimationFrame(step);
+              };
+              requestAnimationFrame(step);
+              counterObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.45 });
+        counters.forEach(c => counterObserver.observe(c));
+      } else {
+        counters.forEach(el => {
+          const target = el.dataset.count;
+          const showPlus = el.dataset.plus === 'true';
+          el.textContent = target + (showPlus ? '+' : '');
+        });
+      }
+
+      // Back to top
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 650) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+        // Scroll progress
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        scrollProgress.style.width = pct + '%';
+      });
+      backBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth'}));
+
+      // Basic front-end validation for mailto form (prevent empty submissions / spam honeypot)
+      const contactForm = document.querySelector('.contact-form');
+      contactForm?.addEventListener('submit', (e) => {
+        const honey = contactForm.querySelector('#company');
+        if (honey && honey.value) {
+          e.preventDefault(); // likely bot
+          return;
+        }
+        const email = contactForm.querySelector('#email');
+        const msg = contactForm.querySelector('#message');
+        if (!email.value || !msg.value) {
+          e.preventDefault();
+          live.textContent = 'Please complete the required fields.';
+        }
+      });
+
+      // Project filters
+      const filterContainer = document.querySelector('.projects-filters');
+      const filterButtons = document.querySelectorAll('.projects-filters .filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      function applyFilter(key) {
+        projectCards.forEach(card => {
+          if (key === 'all') { card.classList.remove('is-hidden'); return; }
+          const tags = card.dataset.tags.split(/\s+/);
+          if (tags.includes(key)) card.classList.remove('is-hidden'); else card.classList.add('is-hidden');
+        });
+      }
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected','true');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+      // Keyboard arrow navigation for filters
+      filterContainer?.addEventListener('keydown', (e) => {
+        if (!['ArrowRight','ArrowLeft'].includes(e.key)) return;
+        const current = document.activeElement;
+        const buttons = Array.from(filterButtons);
+        const idx = buttons.indexOf(current);
+        if (idx === -1) return;
+        const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % buttons.length : (idx - 1 + buttons.length) % buttons.length;
+        buttons[nextIdx].focus();
+        buttons[nextIdx].click();
+      });
+
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dushan Lee Portfolio",
+        "url": "https://your-domain.example",
+        "author": { "@type": "Person", "name": "Dushan Lee" },
+        "about": "Full-stack software engineering portfolio showcasing scalable architecture, data modeling, and product delivery.",
+        "inLanguage": "en",
+        "publisher": { "@type": "Person", "name": "Dushan Lee" }
+      }
+    </script>
+  </body>
 </html>
