@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Premed to SWE Journey – Dushan Lee</title>
-    <meta name="description" content="My path from premed to software engineering." />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600&display=swap" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="My path from premed to software engineering.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600&display=swap">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header" aria-label="Site header">
@@ -50,13 +50,32 @@
     </header>
 
     <main id="main">
-      <section class="section">
+      <section class="section" id="journey">
         <div class="section-head">
           <h2 class="section-title">My Premed to SWE Journey</h2>
-          <p class="section-tagline">A brief story about how analytical training led to building software.</p>
+          <p class="section-subtitle">Brief story of how I went from aspiring gastroenterologist to software engineer.</p>
         </div>
         <div class="about-card">
-          <p class="about-text">This page will share a concise narrative of my transition from premed to software engineering, highlighting the skills that carried over and the projects that shaped my path.</p>
+          <div class="journey-text">
+          <p class="about-text">
+            Hi! I’m Dushan (or Michael), a software engineer with a strong foundation in full-stack web development, having completed Hack Reactor’s 16-week immersive bootcamp. Throughout the program, I built several full-stack applications using modern tools and frameworks, focusing on clean architecture, scalability, and user experience.
+          </p>
+          <p class="about-text">
+            Before transitioning into tech, I studied biochemistry and considered medicine. These previous experiences prepared and taught me to think critically, problem-solve under pressure, and stay persistent through challenges. I now bring that same discipline into software engineering, where I strive to write code I fully understand, learn continuously, and deliver thoughtful, maintainable solutions.
+          </p>
+          <p class="about-text">
+            I’m looking to join a collaborative engineering team that values mentorship, growth, and curiosity. I may be early in my journey, but I’m eager to contribute, improve every day, and become someone who adds lasting value to both the product and the people around me. My goal is to grow into a dependable and impactful engineer who becomes a valuable asset to your company over time.
+          </p>
+          <p class="journey-note">Feel free to ask me more about my journey or if you have any questions, let me know!</p>
+          </div>
+            <div class="photo-stack">
+            <div class="hero-avatar">
+              <img src="pictures/clinic.jpg" alt="Working at the clinic">
+            </div>
+            <div class="hero-avatar">
+              <img src="pictures/school.jpg" alt="On campus at school">
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -78,6 +97,8 @@
         localStorage.setItem("pref-theme", next);
         themeToggle.setAttribute("aria-pressed", next === "dark");
       });
+
+      // (removed slideshow; showing two circular avatars instead)
     </script>
   </body>
 </html>
