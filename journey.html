@@ -15,16 +15,24 @@
     <header class="site-header" aria-label="Site header">
       <div class="nav-inner">
         <div class="brand">
-          <a href="index.html#main" class="brand-name brand-link" aria-label="Go to main content">Dushan Lee</a>
+          <a href="index.html#main" class="brand-name brand-link" aria-label="Go to home">Dushan Lee</a>
         </div>
-        <nav class="primary-nav" aria-label="Primary navigation">
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="index.html#about">About Me</a></li>
             <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="header-controls">
+          <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
           <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
             <span class="theme-icon sun" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -77,6 +85,17 @@
             </div>
           </div>
         </div>
+        <div class="journey-cta">
+          <p class="journey-note">Interested in my hobbies and interests? Explore them here:</p>
+          <div class="contact-links">
+            <a href="hobbies.html" class="social-btn hobbies link-card">
+              <span class="icon" aria-hidden="true">
+                <img src="logos/hobbies.webp" alt="Hobbies" class="icon-img hobbies-img" />
+              </span>
+              <span>Hobbies &amp; Interests</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -98,7 +117,20 @@
         themeToggle.setAttribute("aria-pressed", next === "dark");
       });
 
-      // (removed slideshow; showing two circular avatars instead)
+      // Mobile nav toggle
+      const navToggle = document.getElementById("navToggle");
+      const primaryNav = document.getElementById("primaryNav");
+      navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+        primaryNav.classList.toggle("open", !expanded);
+      });
+      primaryNav.addEventListener("click", (e) => {
+        if (e.target.tagName === "A" && navToggle.getAttribute("aria-expanded") === "true") {
+          navToggle.setAttribute("aria-expanded", "false");
+          primaryNav.classList.remove("open");
+        }
+      });
     </script>
   </body>
 </html>

@@ -15,16 +15,24 @@
     <header class="site-header" aria-label="Site header">
       <div class="nav-inner">
         <div class="brand">
-          <a href="index.html#main" class="brand-name brand-link" aria-label="Go to main content">Dushan Lee</a>
+          <a href="index.html#main" class="brand-name brand-link" aria-label="Go to home">Dushan Lee</a>
         </div>
-        <nav class="primary-nav" aria-label="Primary navigation">
+        <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="index.html#about">About Me</a></li>
             <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="header-controls">
+          <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
           <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
             <span class="theme-icon sun" aria-hidden="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -64,7 +72,7 @@
               </div>
             </div>
             <div class="hobby-card">
-              <img src="pictures/guitar.JPG" alt="Playing guitar" class="hobby-img" />
+              <img src="pictures/guitar.jpg" alt="Playing guitar" class="hobby-img" />
               <div class="hobby-info">
                 <h3>Playing Guitar</h3>
                 <p>I play guitar and sing for fun. I serve on my church’s worship team for Friday and Sunday services and enjoy teaching others how to play.</p>
@@ -85,7 +93,7 @@
               </div>
             </div>
             <div class="hobby-card">
-              <img src="pictures/missions.JPG" alt="Church missions" class="hobby-img" />
+              <img src="pictures/missions.jpg" alt="Church missions" class="hobby-img" />
               <div class="hobby-info">
                 <h3>Church Missions</h3>
                 <p>I serve on church missions overseas, speaking Spanish with local communities and supporting practical needs through outreach. These experiences build empathy and perspective, grounding my work and goals. I feel called to do the Lord’s work with humility, teamwork, and care.</p>
@@ -99,9 +107,17 @@
               </div>
             </div>
           </div>
+          <div class="hobbies-cta">
+            <p class="journey-note">Interested in my journey into tech? Explore it here:</p>
+            <div class="contact-links">
+              <a href="journey.html" class="social-btn journey link-card">
+                <img src="logos/ucsd.png" alt="UC San Diego logo" class="logo-img" />
+                <span>My Journey</span>
+              </a>
+            </div>
+          </div>
       </section>
 
-      <!-- Lightbox Modal for Hobby Images -->
       <div id="lightboxModal" class="lightbox-modal" style="display:none;">
         <span class="lightbox-close" id="lightboxClose">&times;</span>
         <img class="lightbox-content" id="lightboxImg" alt="Expanded hobby image" />
@@ -126,7 +142,6 @@
         themeToggle.setAttribute("aria-pressed", next === "dark");
       });
 
-      // Lightbox functionality for hobby images
       const hobbyImgs = document.querySelectorAll('.hobby-img');
       const lightboxModal = document.getElementById('lightboxModal');
       const lightboxImg = document.getElementById('lightboxImg');
@@ -145,6 +160,20 @@
       lightboxModal.addEventListener('click', (e) => {
         if (e.target === lightboxModal) {
           lightboxModal.style.display = 'none';
+        }
+      });
+
+      const navToggle = document.getElementById("navToggle");
+      const primaryNav = document.getElementById("primaryNav");
+      navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+        primaryNav.classList.toggle("open", !expanded);
+      });
+      primaryNav.addEventListener("click", (e) => {
+        if (e.target.tagName === "A" && navToggle.getAttribute("aria-expanded") === "true") {
+          navToggle.setAttribute("aria-expanded", "false");
+          primaryNav.classList.remove("open");
         }
       });
     </script>

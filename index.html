@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
@@ -34,20 +34,48 @@
       <div class="nav-inner">
         <div class="brand">
           <a
-            href="#main"
+            href="index.html"
             class="brand-name brand-link"
-            aria-label="Go to main content"
+            aria-label="Go to home"
             >Dushan Lee</a
           >
         </div>
-        <nav class="primary-nav" aria-label="Primary navigation">
+        <nav
+          class="primary-nav"
+          id="primaryNav"
+          aria-label="Primary navigation"
+        >
           <ul class="nav-list">
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="header-controls">
+          <button
+            type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Toggle navigation"
+            aria-controls="primaryNav"
+            aria-expanded="false"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
           <button
             type="button"
             class="theme-toggle"
@@ -122,10 +150,10 @@
         <div class="about-card">
           <p class="about-text">
             I graduated from the University of California, San Diego with a B.S.
-            in Biochemistry and minors in Psychology and Political Science.
-            Being Korean and raised in Southern California, I'm fluent in
-            English and Korean and proficient in Spanish and hope to learn
-            Mandarin to better connect with my Chinese friends.
+            in Biochemistry and minors in Psychology and Political Science. I am
+            fluent in English and Korean, conversational in Spanish, and
+            currently learning Mandarin to better connect with my Chinese
+            friends.
           </p>
           <div class="contact-links">
             <a href="journey.html" class="social-btn journey link-card">
@@ -204,6 +232,37 @@
         </div>
       </section>
 
+      <section id="experience" class="section">
+        <div class="section-head">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-tagline">
+            Bootcamp foundation and professional roles.
+          </p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <h3>Hack Reactor Bootcamp</h3>
+            <p><strong>Role:</strong> Software Engineer Fellow</p>
+            <p><strong>Duration:</strong> June 2025 – October 2025</p>
+            <a
+              href="certificate.pdf"
+              target="_blank"
+              rel="noopener"
+              class="social-btn certificate link-card"
+            >
+              <span class="icon" aria-hidden="true">
+                <img
+                  src="logos/certified.jpg"
+                  alt="Certified"
+                  class="icon-img"
+                />
+              </span>
+              <span>Certificate</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
       <section id="contact" class="section">
         <div class="section-head">
           <h2 class="section-title">Contact</h2>
@@ -213,7 +272,7 @@
         </div>
         <div class="contact-links">
           <a
-            href="Resume.pdf"
+            href="resume.pdf"
             target="_blank"
             rel="noopener"
             class="social-btn resume link-card"
@@ -260,31 +319,45 @@
     </main>
 
     <script>
-      // Theme init
       const root = document.documentElement;
       const storedTheme = localStorage.getItem("pref-theme");
       if (storedTheme) {
         root.setAttribute("data-theme", storedTheme);
       } else {
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          "(prefers-color-scheme: dark)",
         ).matches;
         root.setAttribute("data-theme", prefersDark ? "dark" : "light");
       }
-      // Sync initial aria-pressed with current theme for icon visibility
       const themeToggle = document.getElementById("themeToggle");
       themeToggle.setAttribute(
         "aria-pressed",
-        root.getAttribute("data-theme") === "dark"
+        root.getAttribute("data-theme") === "dark",
       );
 
-      // Theme toggle
       themeToggle.addEventListener("click", () => {
         const next =
           root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", next);
         localStorage.setItem("pref-theme", next);
         themeToggle.setAttribute("aria-pressed", next === "dark");
+      });
+
+      const navToggle = document.getElementById("navToggle");
+      const primaryNav = document.getElementById("primaryNav");
+      navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+        primaryNav.classList.toggle("open", !expanded);
+      });
+      primaryNav.addEventListener("click", (e) => {
+        if (
+          e.target.tagName === "A" &&
+          navToggle.getAttribute("aria-expanded") === "true"
+        ) {
+          navToggle.setAttribute("aria-expanded", "false");
+          primaryNav.classList.remove("open");
+        }
       });
     </script>
   </body>
