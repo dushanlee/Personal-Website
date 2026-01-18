@@ -55,40 +55,57 @@
           <h2 class="section-title">Hobbies &amp; Interests</h2>
           <p class="section-tagline">Outside of coding, I enjoy cooking, playing multiple instruments, badminton, and volunteering on missions with my church.</p>
         </div>
-        <div class="about-card">
-          <div class="hobby-pairs">
-            <div class="hobby-item">
-              <h3>Cooking</h3>
-              <p>I love exploring new cuisines and techniques, especially cooking steak, burgers, Korean, Mexican, and Indian dishes and enjoy learning new recipes from different cultures.</p>
+          <div class="hobby-cards">
+            <div class="hobby-card">
+              <img src="pictures/cooking.jpg" alt="Cooking" class="hobby-img" />
+              <div class="hobby-info">
+                <h3>Cooking</h3>
+                <p>I love exploring new cuisines and techniques, especially cooking steak, burgers, Korean, Mexican, and Indian dishes and enjoy learning new recipes from different cultures.</p>
+              </div>
             </div>
-            <div class="hero-avatar"><img src="pictures/cooking.jpg" alt="Cooking"></div>
-
-            <div class="hobby-item">
-              <h3>Playing Guitar</h3>
-              <p>I play guitar and sing for fun. I serve on my church’s worship team for Friday and Sunday services and enjoy teaching others.</p>
+            <div class="hobby-card">
+              <img src="pictures/guitar.JPG" alt="Playing guitar" class="hobby-img" />
+              <div class="hobby-info">
+                <h3>Playing Guitar</h3>
+                <p>I play guitar and sing for fun. I serve on my church’s worship team for Friday and Sunday services and enjoy teaching others how to play.</p>
+              </div>
             </div>
-            <div class="hero-avatar"><img src="pictures/guitar.JPG" alt="Playing guitar"></div>
-
-            <div class="hobby-item">
-              <h3>Playing Drums</h3>
-              <p>I play drums to relieve stress and enjoy being the one who keeps the rhythm in a band. I also serve on my church’s worship team for Sunday services and love teaching others.</p>
+            <div class="hobby-card">
+              <img src="pictures/drums.jpg" alt="Playing drums" class="hobby-img" />
+              <div class="hobby-info">
+                <h3>Playing Drums</h3>
+                <p>I play drums to relieve stress and enjoy being the one who keeps the rhythm in a band. I also serve on my church’s worship team for Sunday services and love teaching others.</p>
+              </div>
             </div>
-            <div class="hero-avatar"><img src="pictures/drums.jpg" alt="Playing drums"></div>
-
-            <div class="hobby-item">
-              <h3>Badminton</h3>
-              <p>I play badminton to exercise, stay active, and maintain my health. As a racquet sport, it’s excellent for hand–eye coordination and reaction time, encourages friendly competition, and has been linked with longevity in population studies.</p>
+            <div class="hobby-card">
+              <img src="pictures/badminton.jpg" alt="Playing badminton" class="hobby-img" />
+              <div class="hobby-info">
+                <h3>Badminton</h3>
+                <p>I play badminton to exercise, stay active, and maintain my health. As a racquet sport, it’s excellent for hand–eye coordination and reaction time, encourages friendly competition, and has been linked with longevity in population studies.</p>
+              </div>
             </div>
-            <div class="hero-avatar"><img src="pictures/badminton.jpg" alt="Playing badminton"></div>
-
-            <div class="hobby-item">
-              <h3>Church Missions</h3>
-              <p>I serve on church missions overseas, speaking Spanish with local communities and supporting practical needs through outreach. These experiences build empathy and perspective, grounding my work and goals. I feel called to do the Lord’s work with humility, teamwork, and care.</p>
+            <div class="hobby-card">
+              <img src="pictures/missions.JPG" alt="Church missions" class="hobby-img" />
+              <div class="hobby-info">
+                <h3>Church Missions</h3>
+                <p>I serve on church missions overseas, speaking Spanish with local communities and supporting practical needs through outreach. These experiences build empathy and perspective, grounding my work and goals. I feel called to do the Lord’s work with humility, teamwork, and care.</p>
+              </div>
             </div>
-            <div class="hero-avatar"><img src="pictures/missions.JPG" alt="Church missions"></div>
+            <div class="hobby-card">
+              <img src="pictures/games.jpg" alt="Playing video games" class="hobby-img" />
+              <div class="hobby-info">
+                <h3>Playing Video Games</h3>
+                <p>I enjoy playing video games with friends to relax, have fun, and stay connected. Gaming is a great way to unwind, challenge myself, and share memorable moments and teamwork with others, whether it’s through friendly competition or cooperative adventures.</p>
+              </div>
+            </div>
           </div>
-        </div>
       </section>
+
+      <!-- Lightbox Modal for Hobby Images -->
+      <div id="lightboxModal" class="lightbox-modal" style="display:none;">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Expanded hobby image" />
+      </div>
     </main>
 
     <script>
@@ -107,6 +124,28 @@
         root.setAttribute("data-theme", next);
         localStorage.setItem("pref-theme", next);
         themeToggle.setAttribute("aria-pressed", next === "dark");
+      });
+
+      // Lightbox functionality for hobby images
+      const hobbyImgs = document.querySelectorAll('.hobby-img');
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
+      hobbyImgs.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxModal.style.display = 'flex';
+        });
+      });
+      lightboxClose.addEventListener('click', () => {
+        lightboxModal.style.display = 'none';
+      });
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+          lightboxModal.style.display = 'none';
+        }
       });
     </script>
   </body>
